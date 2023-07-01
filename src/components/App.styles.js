@@ -85,6 +85,7 @@ export const ExpenseBox = styled.div`
         font-size: 20px;
         color: ${(props) => (props.isIncome ? "green":"red")};
         margin-top:10px;
+        align-items: center;
     }
 `;
 
@@ -99,4 +100,7 @@ export const Cell = styled.div`
     border: 1px solid #e6e8e9;
     border-right: 4px solid ${(props) => (props.isExpense ? "red": "green")};
     width: 90%;
+    & span {
+        align-items: center;
+    }
 `;
