@@ -44,6 +44,11 @@ export const AddTransactionContainer = styled.div`
         border-radius: 4px;
         border: 1px solid #e6e8e9;
     }
+    & input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    ;}
 `;
 
 export const RadioBox = styled.div`

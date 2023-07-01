@@ -11,6 +11,10 @@ const AddTransactionView = (props) => {
   const [type, setType] = useState("EXPENSE");
 
   const addTransaction = () => {
+    if(amount.length>10 || amount.length === 0 || description.length<3 || description.length === 0){
+        alert("Please enter Correct details");
+        return;
+    }
     props.addTransaction({
       amount: Number(amount),
       description,
@@ -19,6 +23,15 @@ const AddTransactionView = (props) => {
     });
     props.setIsAddTxnVisible(false);
   };
+
+  const handleChange = (e) => {
+    const value = e.target.value;
+    const regex = /^[A-Za-z]+$/;
+
+    if (value===''||regex.test(value)) {
+      setDescription(value);
+    }
+  }
 
   return (
     <AddTransactionContainer>
@@ -31,7 +44,7 @@ const AddTransactionView = (props) => {
       <input
         placeholder="Description"
         value={description}
-        onChange={(e) => setDescription(e.target.value)}
+        onChange={handleChange}
       />
       <RadioBox>
         <input
