@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import {
   AddTransaction,
   BalanceBox,
-  Container,
   ExpenseBox,
   ExpenseContainer,
 } from "./App.styles";
 import AddTransactionView from "./AddTransactionView";
+import styled from "styled-components";
+
+const Container = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 10px;
+    font-family: Montserrat;
+    width: 90%;
+`;
 
 const Overview = (props) => {
   const [isAddTxnVisible, setIsAddTxnVisible] = useState(false);

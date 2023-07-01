@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Container } from "./App.styles";
 import Overview from "./Overview";
 import Transaction from "./Transaction";
+import styled from "styled-components";
+
+const Container = styled.div`
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0 10px;
+    font-family: Montserrat;
+    width: 100%;
+`;
 
 const HomeComponent = () => {
   const [transaction, setTranscation] = useState([]);

@@ -8,7 +8,6 @@ const Container = styled.div`
   align-items: center;
   font-family: Montserrat;
   padding: 10px 22px;
-  align-items: flex-start;
   font-size: 18px;
   width: 100%;
   gap: 10px;
@@ -47,7 +46,7 @@ const Transaction = (props) => {
 
   return (
     <Container>
-      Transaction
+      Transactions
       <input
         placeholder="Search"
         value={searchText}

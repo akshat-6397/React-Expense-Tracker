@@ -1,31 +1,21 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  font-family: Montserrat;
-  min-width: 280px;
-  border: 1px solid black;
-`;
-
 export const Header = styled.div`
   color: black;
   font-size: 25px;
-  font-family: sans-seriff;
+  font-family: Montserrat;
   font-weight: bold;
 `;
 
 export const BalanceBox = styled.div`
   font-size: 18px;
   font-weight: bold;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-top:50px;
+  margin-top:20px;
 `;
 
 export const AddTransaction = styled.div`
@@ -42,11 +32,12 @@ export const AddTransaction = styled.div`
 export const AddTransactionContainer = styled.div`
     display: flex;
     flex-direction: column;
-    border: 1px solid #e6e8e9;
+    ${'' /* border: 1px solid #e6e8e9; */}
     gap: 10px;
     width: 100%;
     padding: 15px 20px;
     margin: 20px;
+    margin-bottom: 0;
     & input {
         outline: none;
         padding: 10px 12px;
@@ -57,15 +48,22 @@ export const AddTransactionContainer = styled.div`
 
 export const RadioBox = styled.div`
     display: flex;
-    flex-direction: row;
     width: 100%;
+    font-weight: 500;
     align-items: center;
+    margin: 10px 0 10px;
+    & input {
+        margin-left: 10px;
+        cursor:pointer;
+    }
 `;
 
 export const ExpenseContainer = styled.div`
     display: flex;
     gap: 12px;
-    margin: 20px;
+    margin: 20px 20px;
+    margin-bottom: 0;
+    width: 100%;
 `;
 
 export const ExpenseBox = styled.div`
@@ -74,12 +72,14 @@ export const ExpenseBox = styled.div`
     border-radius: 4px;
     border: 1px solid #e6e8e9;
     padding: 15px 20px;
-    width: 135px;
+    width: 100%;
+    font-weight: bold;
     font-size: 14px;
     & span{
         font-weight: bold;
         font-size: 20px;
         color: ${(props) => (props.isIncome ? "green":"red")};
+        margin-top:10px;
     }
 `;
 
