@@ -30,7 +30,7 @@ const Transaction = (props) => {
 
   useEffect(() => {
     filteredData();
-  },[props.transaction]);
+  },[props.transaction, searchText]);
 
   const filteredData = () => {
     if (!searchText || !searchText.trim().length) {
