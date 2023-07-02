@@ -24,7 +24,9 @@ const Overview = (props) => {
   return (
     <Container>
       <BalanceBox>
-        Balance: ${props.income - props.expense}
+        <div>
+            Balance: <RupeeIcon  height={"20px"} width={"20px"} color={"black"}/>{props.income - props.expense}
+        </div>
         <AddTransaction onClick={() => setIsAddTxnVisible(!isAddTxnVisible)}>
           {isAddTxnVisible ? "Cancel" : "ADD"}
         </AddTransaction>

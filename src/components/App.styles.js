@@ -16,6 +16,11 @@ export const BalanceBox = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top:20px;
+  & div{
+    display: flex;
+    justifyContent:center;
+    align-items: center;
+  }
 `;
 
 export const AddTransaction = styled.div`
@@ -27,6 +32,10 @@ export const AddTransaction = styled.div`
   cursor: pointer;
   font-weight: bold;
   font-size: 15px;
+  &:hover{
+    background-color: blue;
+    color: white;
+  }
 `;
 
 export const AddTransactionContainer = styled.div`
@@ -82,6 +91,7 @@ export const ExpenseBox = styled.div`
     font-size: 14px;
     & span{
         font-weight: bold;
+        display: flex;
         font-size: 20px;
         color: ${(props) => (props.isIncome ? "green":"red")};
         margin-top:10px;
@@ -101,6 +111,12 @@ export const Cell = styled.div`
     border-right: 4px solid ${(props) => (props.isExpense ? "red": "green")};
     width: 90%;
     & span {
+        width: 100px;
+        display: flex;
         align-items: center;
+    }
+    & i: hover{
+        color: red;
+        cursor: pointer;
     }
 `;

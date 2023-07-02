@@ -11,7 +11,7 @@ const AddTransactionView = (props) => {
   const [type, setType] = useState("EXPENSE");
 
   const addTransaction = () => {
-    if(amount.length>10 || amount.length === 0 || description.length<3 || description.length === 0){
+    if(amount.length>6 || amount.length === 0 || description.length<3 || description.length === 0){
         alert("Please enter Correct details");
         return;
     }
@@ -26,7 +26,7 @@ const AddTransactionView = (props) => {
 
   const handleChange = (e) => {
     const value = e.target.value;
-    const regex = /^[A-Za-z]+$/;
+    const regex = /^[a-zA-Z\s]+$/;
 
     if (value===''||regex.test(value)) {
       setDescription(value);

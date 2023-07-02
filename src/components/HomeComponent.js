@@ -13,7 +13,7 @@ const Container = styled.div`
 `;
 
 const HomeComponent = () => {
-  const [transaction, setTranscation] = useState([]);
+  const [transaction, setTransaction] = useState([]);
   const [expense, setExpense] = useState(0);
   const [income, setIncome] = useState(0);
 
@@ -24,7 +24,7 @@ const HomeComponent = () => {
   const addTransaction = (payload) => {
     const transactionArray = [...transaction];
     transactionArray.push(payload);
-    setTranscation(transactionArray);
+    setTransaction(transactionArray);
   };
 
   function calculateBalance(){
@@ -34,9 +34,18 @@ const HomeComponent = () => {
       item.type === "EXPENSE"
         ? (exp = exp + item.amount)
         : (inc = inc + item.amount);
+        return null;
     });
     setExpense(exp);
     setIncome(inc);
+  }
+
+  const handleDeleteButton = (id) => {
+    const arr = transaction.filter((item) => {
+        return item.id !== id;
+    });
+    setTransaction(arr);
+    calculateBalance();
   }
 
   return (
@@ -46,7 +55,7 @@ const HomeComponent = () => {
         expense={expense}
         income={income}
       />
-      <Transaction transaction={transaction} />
+      <Transaction handleDeleteButton={handleDeleteButton} transaction={transaction} />
     </Container>
   );
 };

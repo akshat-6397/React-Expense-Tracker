@@ -55,7 +55,7 @@ const Transaction = (props) => {
       />
       {filteredTransaction.length > 0
         ? filteredTransaction.map((item) => (
-            <TransactionCell item={item} />
+            <TransactionCell key={item.id} handleDeleteButton={props.handleDeleteButton} item={item}/>
           ))
         : null}
     </Container>
